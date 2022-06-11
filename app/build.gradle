@@ -4,16 +4,17 @@ plugins {
     id 'com.google.gms.google-services'
 
 
+
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.example.booksim_read"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -49,6 +50,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.5'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.5'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
 
 
     testImplementation 'junit:junit:4.+'
