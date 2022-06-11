@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Booksim_Read</string>
+    <string name="new_user_signup">New User? <b> SingUp? </b></string>
 </resources>
