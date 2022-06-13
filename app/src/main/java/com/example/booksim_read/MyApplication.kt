@@ -1,11 +1,14 @@
 package com.example.booksim_read
 
 import android.app.Application
+import android.app.ProgressDialog
+import android.content.Context
 import android.text.format.DateFormat
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
 import com.github.barteksc.pdfviewer.PDFView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -136,6 +139,52 @@ class MyApplication: Application() {
                         }
 
                     })
+        }
+
+        fun deleteBook(context: Context, bookId: String, bookUrl: String, bookTitle: String){
+            //param details
+            //1) context, used when require e.g. for progressdialog, toast
+            //2) bookId, to delete book from db
+            //3) bookUrl, delete book from firebase storage
+            //4) bookTitle, show in dialog
+
+            val TAG = "DELETE_BOOK_TAG"
+
+            Log.d(TAG, "deleteBook: Deleting...")
+
+            //progress dialog
+            val progressDialog = ProgressDialog(context)
+            progressDialog.setTitle("Please wait")
+            progressDialog.setMessage("Deleting $bookTitle")
+            progressDialog.setCanceledOnTouchOutside(false)
+            progressDialog.show()
+
+            Log.d(TAG, "deleteBook: Deleting from storage...")
+            val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(bookUrl)
+            storageReference.delete()
+                .addOnSuccessListener {
+                    Log.d(TAG, "deleteBook: Deleted from storage")
+                    Log.d(TAG, "deleteBook: Deleting db now..")
+
+                    val ref = FirebaseDatabase.getInstance().getReference("Books")
+                    ref.child(bookId)
+                        .removeValue()
+                        .addOnSuccessListener {
+                            progressDialog.dismiss()
+                            Toast.makeText(context, "Successfully deleted!", Toast.LENGTH_SHORT).show()
+                            Log.d(TAG, "deleteBook: Deleted from db")
+                        }
+                        .addOnFailureListener { e->
+                            progressDialog.dismiss()
+                            Log.d(TAG, "deleteBook: Failed to delete db due to ${e.message}")
+                            Toast.makeText(context, "Failed to delete due to ${e.message}", Toast.LENGTH_SHORT).show()
+                        }
+                }
+                .addOnFailureListener { e->
+                    progressDialog.dismiss()
+                    Log.d(TAG, "deleteBook: Failed to delete storage due to ${e.message}")
+                    Toast.makeText(context, "Failed to delete due to ${e.message}", Toast.LENGTH_SHORT).show()
+                }
         }
     }
 }
