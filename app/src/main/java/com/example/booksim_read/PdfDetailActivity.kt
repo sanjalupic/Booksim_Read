@@ -1,5 +1,6 @@
 package com.example.booksim_read
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.booksim_read.databinding.ActivityPdfDetailBinding
@@ -32,6 +33,13 @@ class PdfDetailActivity : AppCompatActivity() {
         //handle backbuton click, goback
         binding.backBtn.setOnClickListener {
             onBackPressed()
+        }
+
+        //handle click, open pdf view activity
+        binding.readBookBtn.setOnClickListener {
+            val intent = Intent(this, PdfViewActivity::class.java)
+            intent.putExtra("bookId", bookId)
+            startActivity(intent)
         }
     }
 

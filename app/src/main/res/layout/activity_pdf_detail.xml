@@ -18,10 +18,9 @@
             android:id="@+id/backBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_back_white"
             android:layout_marginStart="10dp"
             android:background="@android:color/transparent"
-            android:layout_centerVertical="true"/>
+            android:src="@drawable/ic_back_white" />
 
         <!--Title-->
         <TextView
@@ -37,6 +36,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/bookOptionsLl"
         android:layout_below="@id/toolbarRl"
         android:padding="10dp">
 
@@ -229,5 +229,24 @@
 
         </LinearLayout>
     </ScrollView>
+    <!--Bottom  buttons for book options-->
+    <LinearLayout
+        android:id="@+id/bookOptionsLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/design_default_color_primary">
+
+        <Button
+            android:id="@+id/readBookBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Read"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_book_white"/>
+
+    </LinearLayout>
+
 
 </RelativeLayout>
