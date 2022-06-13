@@ -17,6 +17,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 
 import java.util.*
+import kotlin.collections.HashMap
 
 
 //Application class contain functions that are use multiple places in app
@@ -185,6 +186,37 @@ class MyApplication: Application() {
                     Log.d(TAG, "deleteBook: Failed to delete storage due to ${e.message}")
                     Toast.makeText(context, "Failed to delete due to ${e.message}", Toast.LENGTH_SHORT).show()
                 }
+        }
+
+        fun incrementBookViewCount(bookId: String){
+            //1) Get current book views count
+            val ref = FirebaseDatabase.getInstance().getReference("Books")
+            ref.child(bookId)
+                    .addListenerForSingleValueEvent(object : ValueEventListener{
+                        override fun onDataChange(snapshot: DataSnapshot) {
+                            //get views count
+                            var viewsCount = "${snapshot.child("viewsCount").value}"
+                            if(viewsCount == ""|| viewsCount == "null"){
+                                viewsCount = "0"
+                            }
+                            // 2) Increment views count
+                            val newViewsCount = viewsCount.toLong()+1
+
+                            //setup data to updata in db
+                            val hashMap = HashMap<String, Any>()
+                            hashMap["viewsCount"]=newViewsCount
+
+                            //set to db
+                            val dbRef = FirebaseDatabase.getInstance().getReference("Books")
+                            dbRef.child(bookId)
+                                    .updateChildren(hashMap)
+                        }
+
+                        override fun onCancelled(error: DatabaseError) {
+
+                        }
+
+                    })
         }
     }
 }
