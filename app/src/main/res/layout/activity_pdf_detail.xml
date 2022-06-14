@@ -238,14 +238,35 @@
         android:layout_alignParentBottom="true"
         android:background="@color/design_default_color_primary">
 
+        <!--Button: Read Boook-->
         <Button
             android:id="@+id/readBookBtn"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="Read"
             android:layout_weight="1"
+            android:textSize="10sp"
             android:drawableTop="@drawable/ic_book_white"/>
 
+        <!--Button: Download Book-->
+        <Button
+            android:id="@+id/downloadBookBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Download"
+            android:textSize="10sp"
+            android:drawableTop="@drawable/ic_download_white"
+            android:layout_weight="1"/>
+
+        <!--Button: Favourite Book-->
+        <Button
+            android:id="@+id/favoriteBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_favorite_border_white"
+            android:text="Add Favorite"
+            android:textSize="10sp"
+            android:layout_weight="1"/>
     </LinearLayout>
 
 
