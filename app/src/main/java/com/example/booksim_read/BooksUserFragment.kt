@@ -74,7 +74,7 @@ class BooksUserFragment : Fragment {
             //load most viewed books
             loadMostViewDownloadedBooks("viewsCount")
         }
-        else if(category == "Most Download"){
+        else if(category == "Most Downloaded"){
             //load most downloads books
             loadMostViewDownloadedBooks("downloadsCount")
         }
