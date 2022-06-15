@@ -1,11 +1,12 @@
-package com.example.booksim_read
+package com.example.booksim_read.activities
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import com.example.booksim_read.adapters.AdapterPdfAdmin
+import com.example.booksim_read.models.ModelPdf
 import com.example.booksim_read.databinding.ActivityPdfListAdminBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

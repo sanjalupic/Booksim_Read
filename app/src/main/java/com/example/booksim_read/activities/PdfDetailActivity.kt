@@ -1,4 +1,4 @@
-package com.example.booksim_read
+package com.example.booksim_read.activities
 
 import android.Manifest
 import android.app.ProgressDialog
@@ -11,6 +11,9 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.example.booksim_read.Constants
+import com.example.booksim_read.MyApplication
+import com.example.booksim_read.R
 import com.example.booksim_read.databinding.ActivityPdfDetailBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -106,7 +109,8 @@ class PdfDetailActivity : AppCompatActivity() {
                 //user is logged in, we can do favourite function
                 if(isInMyFavorite){
                     //already in fav, remove
-                    removeFromFavourite()
+                    MyApplication.removeFromFavourite(this, bookId)
+
                 }
                 else{
                     //not in fav., add
@@ -242,10 +246,16 @@ class PdfDetailActivity : AppCompatActivity() {
                         MyApplication.loadCategory(categoryId, binding.categoryTv)
 
                         //load odf thumbnail, pages count
-                        MyApplication.loadPdfFormUrlSinglePage("$bookUrl","$bookTitle", binding.pdfView, binding.progressBar, binding.pagesTv)
+                        MyApplication.loadPdfFormUrlSinglePage(
+                            "$bookUrl",
+                            "$bookTitle",
+                            binding.pdfView,
+                            binding.progressBar,
+                            binding.pagesTv
+                        )
 
                         //load pdf size
-                        MyApplication.loadPdfSize("$bookUrl","$bookTitle", binding.sizeTv)
+                        MyApplication.loadPdfSize("$bookUrl", "$bookTitle", binding.sizeTv)
 
                         //set data
                         binding.titleTv.text = bookTitle
@@ -329,21 +339,5 @@ class PdfDetailActivity : AppCompatActivity() {
 
     }
 
-    private fun removeFromFavourite(){
-        Log.d(TAG, "removeFromFavourite: Removing from fav")
-
-        //database ref
-        val ref = FirebaseDatabase.getInstance().getReference("Users")
-        ref.child(firebaseAuth.uid!!).child("Favorites").child(bookId)
-            .removeValue()
-            .addOnSuccessListener {
-                Log.d(TAG, "removeFromFavourite: Removed form fav")
-                Toast.makeText(this, "Removed from favorite", Toast.LENGTH_SHORT).show()
-            }
-            .addOnFailureListener { e->
-                Log.d(TAG, "removeFromFavourite: Failed to remove from fav due to ${e.message}")
-                Toast.makeText(this, "Failed to remove from fav due to ${e.message}", Toast.LENGTH_SHORT).show()
-            }
-    }
 
 }

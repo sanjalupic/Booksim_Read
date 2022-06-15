@@ -1,4 +1,4 @@
-package com.example.booksim_read
+package com.example.booksim_read.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

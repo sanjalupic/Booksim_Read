@@ -1,7 +1,8 @@
-package com.example.booksim_read
+package com.example.booksim_read.filters
 
 import android.widget.Filter
-import java.util.logging.LogRecord
+import com.example.booksim_read.models.ModelPdf
+import com.example.booksim_read.adapters.AdapterPdfUser
 
 class FilterPdfUser :Filter {
 

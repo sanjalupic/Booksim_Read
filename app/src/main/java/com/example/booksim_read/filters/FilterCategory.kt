@@ -1,6 +1,8 @@
-package com.example.booksim_read
+package com.example.booksim_read.filters
 
 import android.widget.Filter
+import com.example.booksim_read.models.ModelCategory
+import com.example.booksim_read.adapters.AdapterCategory
 
 class FilterCategory: Filter {
 

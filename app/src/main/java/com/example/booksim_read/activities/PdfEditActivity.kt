@@ -1,4 +1,4 @@
-package com.example.booksim_read
+package com.example.booksim_read.activities
 
 import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -67,7 +67,7 @@ class PdfEditActivity : AppCompatActivity() {
     }
 
     private fun loadBookInfo() {
-        Log.d(PdfEditActivity.TAG, "loadBookInfo: Loading book info")
+        Log.d(TAG, "loadBookInfo: Loading book info")
 
         val ref = FirebaseDatabase.getInstance().getReference("Books")
         ref.child(bookId)

@@ -1,4 +1,4 @@
-package com.example.booksim_read
+package com.example.booksim_read.activities
 
 import android.content.Context
 import android.content.Intent
@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.example.booksim_read.BooksUserFragment
 import com.example.booksim_read.databinding.ActivityDashboardUserBinding
+import com.example.booksim_read.models.ModelCategory
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

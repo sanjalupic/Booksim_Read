@@ -1,4 +1,4 @@
-package com.example.booksim_read
+package com.example.booksim_read.activities
 
 import android.app.Activity
 import android.app.ProgressDialog
@@ -15,6 +15,8 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import com.bumptech.glide.Glide
+import com.example.booksim_read.MyApplication
+import com.example.booksim_read.R
 import com.example.booksim_read.databinding.ActivityProfileEditBinding
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth

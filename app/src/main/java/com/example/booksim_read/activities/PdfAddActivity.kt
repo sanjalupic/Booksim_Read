@@ -1,9 +1,6 @@
-package com.example.booksim_read
+package com.example.booksim_read.activities
 
 import android.app.AlertDialog
-import android.app.Application
-import android.app.Application.ActivityLifecycleCallbacks
-import android.app.Instrumentation
 import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
@@ -15,13 +12,13 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.booksim_read.databinding.ActivityPdfAddBinding
+import com.example.booksim_read.models.ModelCategory
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 
 class PdfAddActivity : AppCompatActivity() {

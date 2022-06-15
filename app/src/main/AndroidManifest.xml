@@ -12,26 +12,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".ProfileEditActivity"></activity>
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".PdfViewActivity" />
-        <activity android:name=".PdfDetailActivity" />
-        <activity android:name=".PdfEditActivity" />
-        <activity android:name=".PdfListAdminActivity" />
-        <activity android:name=".PdfAddActivity" />
-        <activity android:name=".CategoryAddActivity" />
-        <activity android:name=".DashboardAdminActivity" />
-        <activity android:name=".DashboardUserActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".activities.ProfileEditActivity"></activity>
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.PdfViewActivity" />
+        <activity android:name=".activities.PdfDetailActivity" />
+        <activity android:name=".activities.PdfEditActivity" />
+        <activity android:name=".activities.PdfListAdminActivity" />
+        <activity android:name=".activities.PdfAddActivity" />
+        <activity android:name=".activities.CategoryAddActivity" />
+        <activity android:name=".activities.DashboardAdminActivity" />
+        <activity android:name=".activities.DashboardUserActivity" />
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activities.MainActivity" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.booksim_read
+package com.example.booksim_read.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -8,6 +8,10 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import com.example.booksim_read.filters.FilterPdfUser
+import com.example.booksim_read.models.ModelPdf
+import com.example.booksim_read.MyApplication
+import com.example.booksim_read.activities.PdfDetailActivity
 import com.example.booksim_read.databinding.RowPdfUserBinding
 
 class AdapterPdfUser : RecyclerView.Adapter<AdapterPdfUser.HolderPdfUser>, Filterable{
@@ -68,7 +72,7 @@ class AdapterPdfUser : RecyclerView.Adapter<AdapterPdfUser.HolderPdfUser>, Filte
         //handle click , open pdf details pafe
         holder.itemView.setOnClickListener {
             //pass book id in intent, that will be used to get pdf info
-            val intent = Intent(context,PdfDetailActivity::class.java)
+            val intent = Intent(context, PdfDetailActivity::class.java)
             intent.putExtra("bookId", bookId)
             context.startActivity(intent)
         }

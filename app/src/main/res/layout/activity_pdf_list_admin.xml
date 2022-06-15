@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PdfListAdminActivity">
+    tools:context=".activities.PdfListAdminActivity">
 
     <!--Toolbar-->
     <RelativeLayout
@@ -14,7 +14,7 @@
         android:background="@drawable/shape_toolbar02">
 
         <!--Back button-->
-        <Button
+        <ImageButton
             android:id="@+id/backBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

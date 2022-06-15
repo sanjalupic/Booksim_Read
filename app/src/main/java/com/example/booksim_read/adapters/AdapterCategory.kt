@@ -1,4 +1,4 @@
-package com.example.booksim_read
+package com.example.booksim_read.adapters
 
 import android.app.AlertDialog
 import android.content.Context
@@ -8,6 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import com.example.booksim_read.filters.FilterCategory
+import com.example.booksim_read.models.ModelCategory
+import com.example.booksim_read.activities.PdfListAdminActivity
 import com.example.booksim_read.databinding.RowCategoryBinding
 import com.google.firebase.database.FirebaseDatabase
 
@@ -70,7 +73,7 @@ class AdapterCategory :RecyclerView.Adapter<AdapterCategory.HolderCategory>, Fil
         }
     }
 
-    private fun deleteCategory(model: ModelCategory, holder: HolderCategory ) {
+    private fun deleteCategory(model: ModelCategory, holder: HolderCategory) {
         //get id of category to delete
         val id = model.id
 

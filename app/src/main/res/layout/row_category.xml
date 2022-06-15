@@ -24,7 +24,10 @@
             android:layout_height="wrap_content"
             android:text="Category Title"
             android:layout_weight="1"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textStyle="bold|italic"
+            android:textSize="18sp"/>
+
 
         <ImageButton
             android:id="@+id/deleteBtn"

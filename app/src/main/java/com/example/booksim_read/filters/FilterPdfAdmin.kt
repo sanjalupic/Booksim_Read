@@ -1,6 +1,8 @@
-package com.example.booksim_read
+package com.example.booksim_read.filters
 
 import android.widget.Filter
+import com.example.booksim_read.models.ModelPdf
+import com.example.booksim_read.adapters.AdapterPdfAdmin
 
 
 /*Used to filter data from recycleview | search pdf from list in recyclerview*/

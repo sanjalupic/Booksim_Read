@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".activities.ProfileActivity">
 
     <View
         android:layout_width="match_parent"
@@ -176,5 +176,31 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/detailsLl"
+        android:background="@color/gray03"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/favoriteLabelTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view1"
+        android:text="Favorite Books"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:padding="5dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/favoriteRv"
+        android:layout_below="@id/favoriteLabelTV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_pdf_favorite"/>
 
 </RelativeLayout>

@@ -1,9 +1,10 @@
-package com.example.booksim_read
+package com.example.booksim_read.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import com.example.booksim_read.Constants
 import com.example.booksim_read.databinding.ActivityPdfViewBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

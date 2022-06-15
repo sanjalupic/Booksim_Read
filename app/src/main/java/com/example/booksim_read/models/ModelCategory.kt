@@ -1,4 +1,4 @@
-package com.example.booksim_read
+package com.example.booksim_read.models
 
 class ModelCategory {
 
