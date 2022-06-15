@@ -91,24 +91,14 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--Forgot Password-->
-            <TextView
-                android:id="@+id/forgotTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/passwordTil"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="5dp"
-                android:padding="5dp"
-                android:text="Forgot Password?"
-                android:textColor="@color/gray02"/>
 
             <!--Login Button-->
             <Button
                 android:id="@+id/loginBnt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/forgotTv"
+                android:layout_below="@id/passwordTil"
+                android:layout_marginTop="5dp"
                 android:text="Login"
                 android:background="@drawable/shape_toolbar01"
                 android:textColor="@color/white"/>
