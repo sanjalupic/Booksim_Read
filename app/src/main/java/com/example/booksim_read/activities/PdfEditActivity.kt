@@ -141,9 +141,9 @@ class PdfEditActivity : AppCompatActivity() {
 
         //setup data to update to db, spellings same as in firebase
         val hashMap = HashMap<String, Any>()
-        hashMap[title] = "$title"
-        hashMap[description] = "$description"
-        hashMap[selectCategoryId] = "$selectCategoryId"
+        hashMap["title"] = "$title"
+        hashMap["description"] = "$description"
+        hashMap["categoryId"] = "$selectCategoryId"
 
         //start updating
         val ref = FirebaseDatabase.getInstance().getReference("Books")
@@ -213,7 +213,7 @@ class PdfEditActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+
             }
 
         })

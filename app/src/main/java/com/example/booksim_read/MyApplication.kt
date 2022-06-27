@@ -220,7 +220,7 @@ class MyApplication: Application() {
                     })
         }
 
-        public fun removeFromFavourite(context: Context, bookId: String){
+        fun removeFromFavourite(context: Context, bookId: String){
 
             val TAG = "REMOVE_FAV_TAG"
 

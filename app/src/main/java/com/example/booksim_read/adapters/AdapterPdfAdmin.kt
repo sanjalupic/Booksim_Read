@@ -94,7 +94,7 @@ class AdapterPdfAdmin :RecyclerView.Adapter<AdapterPdfAdmin.HolderPdfAdmin>, Fil
         }
     }
 
-    private fun moreOptionsDialog(model: ModelPdf, holder: HolderPdfAdmin) {
+    private fun moreOptionsDialog(model: ModelPdf, holder: AdapterPdfAdmin.HolderPdfAdmin) {
 
         //get id, url, title of book
         val bookId = model.id
